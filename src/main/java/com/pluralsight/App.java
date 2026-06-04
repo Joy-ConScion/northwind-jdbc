@@ -17,7 +17,7 @@ public class App {
         String sql = """
                 SELECT productID,
                        ProductName,
-                       UnitPrice,
+                       UnitPrice
                 FROM products;
                 """;
 
@@ -26,9 +26,9 @@ public class App {
              ResultSet resultSet = statement.executeQuery()) {
 
             while(resultSet.next()){
-                int productID = resultSet.getInt("product_id");
-                String ProductName = resultSet.getString("product_name");
-                int UnitPrice = resultSet.getInt("unit_price");
+                int productID = resultSet.getInt("ProductId");
+                String ProductName = resultSet.getString("ProductName");
+                int UnitPrice = resultSet.getInt("UnitPrice");
                 System.out.printf(" %d %s %d", productID, ProductName, UnitPrice);
                 System.out.println();
             }
